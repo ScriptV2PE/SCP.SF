@@ -1,0 +1,129 @@
+function C() spawn(function () while getgenv().C do game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.ToolService.RE.onClick:FireServer() game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.ArmWrestleService.RE.onClickRequest:FireServer() wait() end end) end
+
+function R() spawn(function () while getgenv().R do game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.RebirthService.RE.onRebirthRequest:FireServer() wait() end end) end
+
+function H() spawn(function () while getgenv().H do local args = {[1] = E,[2] = {}}game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.EggService.RF.purchaseEgg:InvokeServer(unpack(args)) wait() end end) end
+
+local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wall%20v3')))()
+
+local w = library:CreateWindow("Scp3008Pe/Pc")
+
+local b = w:CreateFolder("Pe/pc")
+
+b:Button(" Infinite Yield",function() 
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+
+end)
+
+b:Button("Infinite Jump",function()
+
+local InfiniteJumpEnabled = true
+
+game:GetService("UserInputService").JumpRequest:connect(function()
+
+	if InfiniteJumpEnabled then		game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+
+	end
+
+end)
+
+local InfiniteJump = CreateButton("Infinite Jump: Off", StuffFrame)
+
+InfiniteJump.Position = UDim2.new(0,10,0,130)
+
+InfiniteJump.Size = UDim2.new(0,150,0,30)
+
+InfiniteJump.MouseButton1Click:connect(function()
+
+	local state = InfiniteJump.Text:sub(string.len("Infinite Jump: ") + 1) --too lazy to count lol
+
+	local new = state == "Off" and "On" or state == "On" and "Off"
+
+	InfiniteJumpEnabled = new == "On"
+
+	InfiniteJump.Text = "Infinite Jump: " .. new
+
+end)
+
+end)
+
+b:Button("Fullbright",function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ScriptV2PE/SCP.SF/main/.github/workflows/FullBright3008"))()
+
+end)
+
+b:Button("esp player",function()
+
+for i,v in pairs(game:GetService("Players"):GetChildren()) do
+
+    if v ~= game:GetService("Players").LocalPlayer then
+
+    local BillboardGui = Instance.new("BillboardGui")
+
+local TextLabel = Instance.new("TextLabel")
+
+--Properties:
+
+BillboardGui.Parent = v.Character
+
+BillboardGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+BillboardGui.Active = true
+
+BillboardGui.AlwaysOnTop = true
+
+BillboardGui.LightInfluence = 0
+
+BillboardGui.Size = UDim2.new(0, 200, 0, 50)
+
+BillboardGui.StudsOffset = Vector3.new(0, 4, 0)
+
+TextLabel.Parent = BillboardGui
+
+TextLabel.BackgroundColor3 = Color3.new(1, 1, 1)
+
+TextLabel.BackgroundTransparency = 1
+
+TextLabel.BorderSizePixel = 0
+
+TextLabel.Size = UDim2.new(1, 0, 1, 0)
+
+TextLabel.Font = Enum.Font.SourceSans
+
+TextLabel.TextColor3 = Color3.new(0, 1, 0)
+
+TextLabel.TextScaled = true
+
+TextLabel.TextSize = 14
+
+TextLabel.TextWrapped = true
+
+TextLabel.Text = v.Name
+
+end
+
+end
+
+end)
+
+b:Label("Made by SCP.SF#2024",{TextSize = 19; TextColor = Color3.fromRGB(255,255,255); BgColor = Color3.fromRGB(38, 38, 38);})
+
+b:Slider("FOV (Default is 70)",{min = 0;max = 120;precise = true;},function(val) game.workspace.CurrentCamera.FieldOfView = val end)
+
+function TPCFrame(Player_CFrame) if game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Player_CFrame end end
+
+function RTPCFrame(M_CF) if game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then M_CF.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame end end
+
+function PHP(Player_HP) game.Players.LocalPlayer.Character.Humanoid.Health = Player_HP end
+
+function Chat(Mes, Freq) spawn(function () while getgenv().Chat do local args = {[1] = Mes,[2] = "All"} game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args)) wait(Freq) end end) end
+
+function Speed(Nume) spawn(function () while getgenv().Speed do game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = Nume if not getgenv().Speed then game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = 16 end wait() end end) end
+
+function Jump(Nume) spawn(function () while getgenv().Jump do game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower = Nume if not getgenv().Jump then game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower = 50 end wait() end end) end
+
+function Hip(Nume) spawn(function () while getgenv().Hip do game:GetService("Players").LocalPlayer.Character.Humanoid.HipHeight = Nume if not getgenv().Hip then game:GetService("Players").LocalPlayer.Character.Humanoid.HipHeight = 0.1 end wait() end end) end
+
+function Grav(Nume) spawn(function () while getgenv().Grav do game:GetService("Workspace").Gravity = Nume if not getgenv().Grav then game:GetService("Workspace").Gravity = 196.2 end wait() end end) end
