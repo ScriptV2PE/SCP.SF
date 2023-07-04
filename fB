@@ -1,0 +1,25 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wally2", true))()
+local Window = Library:CreateWindow("Fullbright")
+
+local Lighting = game:GetService("Lighting")
+local Settings = {
+    Enabled = false,
+    Color = 255
+}
+
+Window:Toggle("Toggle Fullbright", {}, function(state)
+    task.spawn(function()
+        Settings.Enabled = state
+        while true do
+            if not Settings.Enabled then return end
+
+            Lighting.Ambient = Color3.fromRGB(Settings.Color, Settings.Color, Settings.Color)
+            task.wait(.05)
+        end
+    end)
+end)
+
+
+Window:Slider("Fullbright", {default = 1; min = 0; max = 1; precise = 0.1; }, function(var) 
+    Settings.Color = 255 * var
+end)
